@@ -3,12 +3,33 @@
 > **An intelligent meeting assistant that transforms audio into clear, actionable insights — with transcription, translation, summarization, RAG-powered Q&A, and exportable reports.**
 
 <p align="center">
+
   <img src="https://img.shields.io/badge/Python-3.13+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+
   <img src="https://img.shields.io/badge/Whisper-Local%20STT-412991?style=for-the-badge" alt="Whisper">
+
   <img src="https://img.shields.io/badge/LangChain-LCEL-1C3D3D?style=for-the-badge&logo=langchain&logoColor=white" alt="LangChain">
+
   <img src="https://img.shields.io/badge/Gemini-Google%20AI%20Studio-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini">
+
   <img src="https://img.shields.io/badge/ChromaDB-RAG-FF6F00?style=for-the-badge" alt="ChromaDB">
+
   <img src="https://img.shields.io/badge/Streamlit-UI-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit">
+
+</p>
+
+<p align="center">
+
+  <a href="https://ai-meeting-assistant-kuheli.streamlit.app/">
+    <img src="https://img.shields.io/badge/🚀%20Try%20Live%20Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Live Demo">
+  </a>
+
+</p>
+
+<p align="center">
+
+<strong>🌐 Live App:</strong> <a href="https://ai-meeting-assistant-kuheli.streamlit.app/">ai-meeting-assistant-kuheli.streamlit.app</a>
+
 </p>
 
 ---
@@ -29,6 +50,12 @@ After transcription, **LangChain LCEL + Google Gemini** processes the transcript
 * 💬 RAG-powered conversational Q&A
 
 The application also uses **ChromaDB + HuggingFace embeddings** to allow users to ask questions directly about their meeting transcript.
+
+### 🚀 Try the Application
+
+**Use the deployed application directly:**
+
+👉 **[Open AI Meeting Assistant](https://ai-meeting-assistant-kuheli.streamlit.app/)**
 
 ---
 
@@ -107,12 +134,12 @@ Meeting results can be exported as:
 
 ```text
                     ┌──────────────────────┐
-                    │     User Input       │
+                    │      User Input      │
                     └──────────┬───────────┘
                                │
                  ┌─────────────┴─────────────┐
                  │                           │
-          YouTube URL                  Uploaded File
+            YouTube URL                Uploaded File
                  │                           │
                  └─────────────┬─────────────┘
                                │
@@ -124,45 +151,45 @@ Meeting results can be exported as:
                                │
                                ▼
                     ┌──────────────────────┐
-                    │    Audio Processing  │
-                    │       PyDub          │
+                    │   Audio Processing   │
+                    │        PyDub         │
                     └──────────┬───────────┘
                                │
                                ▼
                     ┌──────────────────────┐
-                    │   Local Whisper      │
-                    │   Speech-to-Text     │
+                    │     Local Whisper    │
+                    │     Speech-to-Text   │
                     └──────────┬───────────┘
                                │
                          Transcript
                                │
-                ┌──────────────┴──────────────┐
-                │                             │
-                ▼                             ▼
-       ┌─────────────────┐          ┌─────────────────┐
-       │ Gemini Analysis │          │   RAG Pipeline  │
-       │                 │          │                 │
-       │ • Summary       │          │ HuggingFace     │
-       │ • Actions       │          │ Embeddings      │
-       │ • Decisions     │          │       ↓         │
-       │ • Title         │          │   ChromaDB      │
-       └────────┬────────┘          │       ↓         │
-                │                   │   Retriever     │
-                │                   └────────┬────────┘
-                │                            │
-                └─────────────┬──────────────┘
-                              │
-                              ▼
+                 ┌─────────────┴─────────────┐
+                 │                           │
+                 ▼                           ▼
+        ┌─────────────────┐         ┌─────────────────┐
+        │ Gemini Analysis │         │   RAG Pipeline  │
+        │                 │         │                 │
+        │ • Summary       │         │ HuggingFace     │
+        │ • Actions       │         │ Embeddings      │
+        │ • Decisions     │         │       ↓         │
+        │ • Title         │         │   ChromaDB      │
+        └────────┬────────┘         │       ↓         │
+                 │                  │   Retriever     │
+                 │                  └────────┬────────┘
+                 │                           │
+                 └─────────────┬─────────────┘
+                               │
+                               ▼
                     ┌──────────────────────┐
-                    │   Streamlit UI       │
+                    │    Streamlit UI      │
                     │                      │
                     │ Summary / Chat /     │
-                    │ Actions / Decisions │
+                    │ Actions / Decisions  │
                     └──────────┬───────────┘
                                │
                                ▼
                     ┌──────────────────────┐
-                    │     Export Results   │
+                    │    Export Results    │
                     │       PDF / TXT      │
                     └──────────────────────┘
 ```
@@ -192,9 +219,9 @@ HuggingFace sentence-transformer models convert transcript chunks into numerical
 
 ```text
 Text
- ↓
+  ↓
 Embedding Model
- ↓
+  ↓
 Vector Representation
 ```
 
@@ -258,6 +285,7 @@ Natural Language Answer
 
 ```text
 AI Meeting Assistant/
+
 │
 ├── app.py
 ├── requirements.txt
@@ -373,6 +401,7 @@ Sarvam support is retained for future use:
 
 ```env
 SARVAM_API_KEY=your_sarvam_api_key
+
 SARVAM_STT_MODEL=saaras:v2.5
 ```
 
@@ -385,8 +414,8 @@ Add this to `.gitignore`:
 .venv/
 __pycache__/
 *.pyc
-downloads/*
-outputs/*
+downloads/
+outputs/
 chroma_db/
 ```
 
@@ -486,8 +515,8 @@ Transcript
       ├───────────────┐
       │               │
       ▼               ▼
-Gemini          HuggingFace
-Analysis         Embeddings
+   Gemini          HuggingFace
+   Analysis         Embeddings
       │               │
       │               ▼
       │            ChromaDB
@@ -565,7 +594,7 @@ This keeps the pipeline modular and easier to extend.
 * [ ] Streaming responses
 * [ ] Background processing for long meetings
 * [ ] Docker deployment
-* [ ] Cloud deployment
+* [x] Cloud deployment
 * [ ] Authentication and user-specific meeting history
 
 ---
@@ -574,16 +603,37 @@ This keeps the pipeline modular and easier to extend.
 
 ```text
 🎙️ Local Speech Recognition
+
 🌍 Multilingual Transcription
+
 🔄 Hindi → English Translation
+
 🤖 Gemini-powered Meeting Analysis
+
 🔎 Semantic Search
+
 🧠 Retrieval-Augmented Generation
+
 💾 Local Vector Database
+
 📄 PDF / TXT Reports
+
 🖥️ Streamlit Interface
+
 ⚡ LangChain LCEL Pipelines
+
+☁️ Streamlit Cloud Deployment
 ```
+
+---
+
+# 🌐 Live Demo
+
+The application is deployed and publicly accessible:
+
+### 🚀 [Try AI Meeting Assistant](https://ai-meeting-assistant-kuheli.streamlit.app/)
+
+You can directly provide a YouTube URL or upload a supported audio/video file and use the meeting analysis and RAG features.
 
 ---
 
@@ -614,4 +664,3 @@ Add your preferred license here if you choose to distribute the project publicly
 **Built with Python • Whisper • LangChain • Gemini • ChromaDB • HuggingFace • Streamlit**
 
 </p>
-```
