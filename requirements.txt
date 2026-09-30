@@ -5,6 +5,7 @@ ffmpeg-python
 pydub
 openai-whisper
 audioop-lts
+torchvision
 
 langchain
 langchain-core
