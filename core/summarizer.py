@@ -1,11 +1,12 @@
 from langchain_google_genai import GoogleGenerativeAI
-
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import StrOutputParser, StructuredOutputParser
+from langchain_core.output_parsers import StrOutputParser
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.runnables import RunnablePassthrough, RunnableLambda
-
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 
 
 def get_llm():
@@ -147,6 +148,6 @@ Rules:
     )
 
     return title_chain.invoke({
-        "text": transcript
+        "text": transcript[:2000]
     })
 
